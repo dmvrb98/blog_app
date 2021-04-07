@@ -1,15 +1,10 @@
-{% extends "blog_app/base.html" %}
-
+{% extends "./base.html" %}
 {% block content %}
-
-  <p>Tematy</p>
-  
-  <ul>
-  	{% for topic in topics %}
-  	  <li>{{ topic }}</li>
-  	{% empty %}
-  	  <li>Nie zostal jeszcze dodany zaden temat</li>
-  	{% endfor %}
-  </ul>
-  
+  {% for topic in topics %}
+    <li>
+  	  <a href="{% url 'blog_app:topic' topic.id %}">{{ topic }}</a>
+  	    </li>
+  	      {% empty %}
+  	        <li>Nie zostal jeszcze dodany zaden temat</li>
+  	      {% endfor %}
 {% endblock content %}
