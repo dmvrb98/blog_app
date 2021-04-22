@@ -1,4 +1,9 @@
 {% extends "./base.html" %}
-{% block content %}
-  <p>Write you thoughts here</p>
-{% endblock content %}
+{% block page_header %}
+  <div class='jumbotron'>
+  	<h1 class="display-3">Write you thoughts here</h1>
+  	<p class="lead">Login or sign up to have abillity to write.</p>
+  	<a class="btn btn-lg btn-primary" href="{% url 'users:register' %}" role=
+  	"button">Sign up &raquo;</a>
+  </div>
+{% endblock page_header %}

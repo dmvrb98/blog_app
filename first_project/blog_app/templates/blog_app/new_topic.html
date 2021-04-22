@@ -2,11 +2,11 @@
 
 {% block content %}
 
-  <p>Dodaj nowy temat:</p>
+  <p>Add new topic:</p>
 
   <form action="{% url 'blog_app:new_topic' %}" method='post'>
   	{% csrf_token %}
   	{{ form.as_p }}
-  	<button name="submit">Dodaj temat</button>
+  	<button name="submit">Add topic</button>
   </form>
 {% endblock content %}

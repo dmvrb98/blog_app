@@ -1,21 +1,26 @@
 {% extends "./base.html" %}
 
+{% block page_header %}
+  <h2>{{ topic }}</h2>
+{% endblock page_header %}
+
 {% block content %}
-
-  <p>Temat: {{ topic }}</p>
-
-  <p>Wpisy</p>
   <p>
-    <a href="{% url 'blog_app:new_entry' topic.id %}">Dodaj nowy wpis</a>
+    <a href="{% url 'blog_app:new_entry' topic.id %}">Add new entry</a>
   </p>
-  <ul>
+  
   {% for entry in entries %}
-    <li>
-  	  <p>{{ entry.date_added|date:'d M Y H:i' }}</p>
-  	  <p>{{ entry.text|linebreaks }}</p>
-    </li>
+    <div class="card mb-3">
+      <h4 class="card-header">
+  	    {{ entry.date_added|date:'d M Y H:i' }}
+          <small><a href="{% url 'blog_app:edit_entry' entry.id %}">Edit entry</a></small>
+      </h4>
+      <div class="card-body">
+  	   {{ entry.text|linebreaks }}
+      </div>
+    </div>
    {% empty %}
-     <li>Nie ma jeszcze żadnego wpisu</li>
+     There is no entry yet.
    {% endfor %}
-  </ul>
+ 
 {% endblock content %}

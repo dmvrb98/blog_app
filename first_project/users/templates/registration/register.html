@@ -5,7 +5,7 @@
   <form method="post" action="{% url 'users:register' %}">
   	{% csrf_token %}
   	{{ form.as_p }}
-  	<button name="submit" value="Submit">Regestruj</button>
+  	<button name="submit" value="Submit">Sign up</button>
   	<input type="hidden" name="next" value="{% url 'blog_app:index' %}" />
   </form>
  {% endblock content %}
