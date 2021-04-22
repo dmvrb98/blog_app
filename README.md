@@ -1,1 +1,1 @@
-# urlstestprog
+Hi, this is my first project, it is a simple blog with possibility to registration, writing or editing entries.
