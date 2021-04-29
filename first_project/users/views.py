@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
+
 def register(request):
+	"""This one allows to register new user and redirects to the home page"""
 	if request.method != 'POST':
 		form = UserCreationForm()
 	else:
@@ -13,4 +15,3 @@ def register(request):
 			return redirect('blog_app:index')
 	context = {'form': form}
 	return render(request, 'registration/register.html', context)
-# Create your views here.

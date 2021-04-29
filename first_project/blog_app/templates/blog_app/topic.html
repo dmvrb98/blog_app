@@ -6,14 +6,18 @@
 
 {% block content %}
   <p>
-    <a href="{% url 'blog_app:new_entry' topic.id %}">Add new entry</a>
+    <a href="{% url 'blog_app:new_entry' topic.id %}">Add new post</a>
+  </p>
+  <p>
+    <a href="{% url 'blog_app:delete_topic' topic.id %}">Delete topic</a>
   </p>
   
   {% for entry in entries %}
     <div class="card mb-3">
       <h4 class="card-header">
   	    {{ entry.date_added|date:'d M Y H:i' }}
-          <small><a href="{% url 'blog_app:edit_entry' entry.id %}">Edit entry</a></small>
+          <small1><a href="{% url 'blog_app:edit_entry' entry.id %}">Edit post</a></small1>
+          <small><a href="{% url 'blog_app:delete_entry' entry.id %}">Delete post</a></small>
       </h4>
       <div class="card-body">
   	   {{ entry.text|linebreaks }}
