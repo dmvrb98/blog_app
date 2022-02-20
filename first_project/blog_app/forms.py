@@ -3,7 +3,6 @@ from .models import Topic, Entry
 
 
 class TopicForm(forms.ModelForm):
-	"""Creating topic form"""
 	class Meta:
 		model = Topic
 		fields = {'text',}

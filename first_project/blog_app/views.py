@@ -28,10 +28,6 @@ def topic(request, topic_id):
 	context = {'topic': topic, 'entries': entries}
 	return render(request, 'blog_app/topic.html', context)
 
-def topic_duplicate(request):
-	if request.method == "POST":
-		return redirect('blog_app:topics')
-	return render(request, 'blog_app/topic_duplicate.html')
 
 @login_required
 def new_topic(request):
